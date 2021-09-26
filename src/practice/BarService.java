@@ -2,12 +2,17 @@ package practice;
 import java.util.Scanner;
 import java.util.ArrayList;
 
-public class MyArray {
+public class BarService {
 
-    private final String[] beers = {"Bush Beer","Duvel","La Chouffe", "Chimay"};
-    private ArrayList<String> beersOrdered = new ArrayList<>();
-    Scanner keyboard = new Scanner(System.in);
+    private final String[] beers;
+    private ArrayList<String> beersOrdered;
+    private Scanner keyboard;
 
+    public BarService(){
+        beers = new String[]{"Bush Beer", "Duvel", "La Chouffe", "Chimay"};
+        beersOrdered = new ArrayList<>();
+        keyboard = new Scanner(System.in);
+    }
     public void printingTheMenu(){
         System.out.println("This is the menu: ");
 

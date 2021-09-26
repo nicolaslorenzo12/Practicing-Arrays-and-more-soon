@@ -1,8 +1,8 @@
 package practice;
 
-public class MainClass {
+public class Bar {
     public static void main(String[] args) {
-        MyArray myArray = new MyArray();
+        BarService myArray = new BarService();
         myArray.printingTheMenu();
         myArray.printingTheOrder();
     }
