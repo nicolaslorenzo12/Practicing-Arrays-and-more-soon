@@ -14,19 +14,19 @@ public class BarService {
         keyboard = new Scanner(System.in);
     }
 
-    public void printingTheMenu(){
+    public void printTheMenu(){
         System.out.println("This is the menu: ");
-        
+
         for(int x = 0; x < beers.length; x++){
             System.out.println(beers[x]);
         }
     }
 
-    public void printingTheOrder(){
-        System.out.println(printTheMenu());
+    public void printTheOrder(){
+        System.out.println(orderBeers());
     }
 
-    private String printTheMenu(){
+    private String orderBeers(){
         String beer = "";
         while(!beer.equals("exit")){
 
