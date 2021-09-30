@@ -13,36 +13,42 @@ public class BarService {
         beersOrdered = new ArrayList<>();
         keyboard = new Scanner(System.in);
     }
+
     public void printingTheMenu(){
         System.out.println("This is the menu: ");
-
+        
         for(int x = 0; x < beers.length; x++){
             System.out.println(beers[x]);
         }
     }
+
     public void printingTheOrder(){
-        System.out.println(orderingBeers());
+        System.out.println(printTheMenu());
     }
 
-    private String orderingBeers(){
-        String beer = " ";
-        boolean beerFound = false;
+    private String printTheMenu(){
+        String beer = "";
         while(!beer.equals("exit")){
 
             System.out.print("What kind of beer do you want?: ");
             beer = keyboard.nextLine();
+            boolean beerFound = false;
+            int counter = 0;
+            while(!beerFound && counter < 4 ){
 
-            for(int x = 0; x< beers.length; x++){
-                if(beer.equals(beers[x])){
-                    System.out.println(beers[x] + " has been added to your order");
-                    beersOrdered.add(beers[x]);
-                    x = beers.length;
+                if(beer.equals(beers[counter])){
+                    System.out.println(beers[counter] + " has been added to your order");
+                    beersOrdered.add(beers[counter]);
+                    counter = beers.length;
                     beerFound = true;
                 }
+                counter++;
             }
+
             if(!beerFound && !beer.equals("exit")){
                 System.out.println("You should choose a beer of the menu");
             }
+
             beerFound = false;
         }
         return "Your order is: " + beersOrdered;
